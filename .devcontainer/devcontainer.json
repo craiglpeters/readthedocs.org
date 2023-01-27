@@ -7,7 +7,9 @@
 		"context": "..",
 		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 		"dockerfile": "../dockerfiles/Dockerfile"
-	}
+	},
+	// Image to pull when not building from scratch
+	"image": "ghcr.io/craiglpeters/readthedocs.org",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},

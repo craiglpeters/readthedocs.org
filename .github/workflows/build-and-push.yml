@@ -29,7 +29,7 @@ jobs:
         name: Pre-build dev container image
         uses: devcontainers/ci@v0.2
         with:
-          subFolder: .devcontainer/build
+          subFolder: .devcontainer-build
           imageName: ghcr.io/${{ github.repository }}
           cacheFrom: ghcr.io/${{ github.repository }}
           push: always

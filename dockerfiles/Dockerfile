@@ -51,6 +51,11 @@ RUN pip3 install --no-cache-dir --upgrade pip
 # Ensure that ``python`` is in the PATH so that ``./manage.py`` works
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
+RUN ls 
+
+RUN echo "contents in tmp" \
+    && ls /tmp
+
 WORKDIR /tmp
 
 COPY requirements/pip.txt pip.txt

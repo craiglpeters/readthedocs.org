@@ -51,26 +51,21 @@ RUN pip3 install --no-cache-dir --upgrade pip
 # Ensure that ``python`` is in the PATH so that ``./manage.py`` works
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
-RUN ls 
+# WORKDIR /tmp
 
-RUN echo "contents in tmp" \
-    && ls /tmp
+# COPY requirements/pip.txt pip.txt
+# COPY requirements/debug.txt debug.txt
+# COPY requirements/docker.txt docker.txt
+# RUN pip3 install --no-cache-dir -r docker.txt
 
-WORKDIR /tmp
+# # Install readthedocs-ext only if GITHUB_TOKEN is provided
+# WORKDIR /usr/src/app/checkouts/
+# RUN if [ -n "$GITHUB_TOKEN" ] ; \
+#         then \
+#         git clone --depth 1 https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/readthedocs/readthedocs-ext ; \
+#         pip3 install --no-cache-dir -e readthedocs-ext ; \
+#         git clone --depth 1 https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/readthedocs/ext-theme ; \
+#         pip3 install --no-cache-dir -e ext-theme ; \
+#         fi
 
-COPY requirements/pip.txt pip.txt
-COPY requirements/debug.txt debug.txt
-COPY requirements/docker.txt docker.txt
-RUN pip3 install --no-cache-dir -r docker.txt
-
-# Install readthedocs-ext only if GITHUB_TOKEN is provided
-WORKDIR /usr/src/app/checkouts/
-RUN if [ -n "$GITHUB_TOKEN" ] ; \
-        then \
-        git clone --depth 1 https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/readthedocs/readthedocs-ext ; \
-        pip3 install --no-cache-dir -e readthedocs-ext ; \
-        git clone --depth 1 https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/readthedocs/ext-theme ; \
-        pip3 install --no-cache-dir -e ext-theme ; \
-        fi
-
-WORKDIR /usr/src/app/checkouts/readthedocs.org
+# WORKDIR /usr/src/app/checkouts/readthedocs.org

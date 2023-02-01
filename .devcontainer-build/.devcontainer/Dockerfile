@@ -53,8 +53,6 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 
 # WORKDIR /tmp
 
-RUN ls requirements
-
 COPY requirements/pip.txt /tmp/pip.txt
 COPY requirements/debug.txt /tmp/debug.txt
 COPY requirements/docker.txt /tmp/docker.txt

@@ -56,7 +56,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 COPY ./requirements/pip.txt /tmp/pip.txt
 COPY ./requirements/debug.txt /tmp/debug.txt
 COPY ./requirements/docker.txt /tmp/docker.txt
-RUN pip3 install --no-cache-dir -r /tmp/docker.txt
+# RUN pip3 install --no-cache-dir -r /tmp/docker.txt
 
 # # Install readthedocs-ext only if GITHUB_TOKEN is provided
 # WORKDIR /usr/src/app/checkouts/

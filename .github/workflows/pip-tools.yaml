@@ -9,7 +9,7 @@ name: Update dependencies with pip-tools
 on:
   schedule:
     # Run weekly on day 0 at 00:00 UTC
-    - cron: "0 0 * * 0"
+    # - cron: "0 0 * * 0" disabled schedule for my fork
 
 permissions:
   contents: read
